@@ -134,7 +134,7 @@ class TimelineAnimation<T> extends Animatable<T> {
     Duration current = Duration.zero;
     for (var i = 0; i < keyframes.length; i++) {
       final keyframe = keyframes[i];
-      assert(keyframe.duration.inMilliseconds > 0, 'Invalid duration');
+      assert(keyframe.duration.inMilliseconds >= 0, 'Invalid duration');
       current += keyframe.duration;
     }
     return TimelineAnimation._(
